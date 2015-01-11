@@ -41,6 +41,8 @@
     self.foodLabel.text = randomFood;
 }
 - (IBAction)findPlacesPressed:(id)sender {
+    NSString *url = [NSString stringWithFormat:@"http://www.yelp.com/search?find_desc=%@", self.food];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString: url]];
 }
 
 @end
