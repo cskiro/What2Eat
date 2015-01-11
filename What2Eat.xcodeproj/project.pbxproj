@@ -14,6 +14,8 @@
 		7582E5211A6309D900C37C0A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7582E5201A6309D900C37C0A /* Images.xcassets */; };
 		7582E5241A6309D900C37C0A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7582E5221A6309D900C37C0A /* LaunchScreen.xib */; };
 		7582E5301A6309DA00C37C0A /* What2EatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7582E52F1A6309DA00C37C0A /* What2EatTests.m */; };
+		7582E53B1A630A9F00C37C0A /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 7582E53A1A630A9F00C37C0A /* Item.m */; };
+		7582E53E1A630CE100C37C0A /* ItemManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7582E53D1A630CE100C37C0A /* ItemManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,10 @@
 		7582E5291A6309DA00C37C0A /* What2EatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = What2EatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7582E52E1A6309DA00C37C0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7582E52F1A6309DA00C37C0A /* What2EatTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = What2EatTests.m; sourceTree = "<group>"; };
+		7582E5391A630A9F00C37C0A /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
+		7582E53A1A630A9F00C37C0A /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
+		7582E53C1A630CE100C37C0A /* ItemManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemManager.h; sourceTree = "<group>"; };
+		7582E53D1A630CE100C37C0A /* ItemManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +87,10 @@
 		7582E5121A6309D900C37C0A /* What2Eat */ = {
 			isa = PBXGroup;
 			children = (
+				7582E53A1A630A9F00C37C0A /* Item.m */,
+				7582E5391A630A9F00C37C0A /* Item.h */,
+				7582E53C1A630CE100C37C0A /* ItemManager.h */,
+				7582E53D1A630CE100C37C0A /* ItemManager.m */,
 				7582E5171A6309D900C37C0A /* AppDelegate.h */,
 				7582E5181A6309D900C37C0A /* AppDelegate.m */,
 				7582E51A1A6309D900C37C0A /* ViewController.h */,
@@ -219,6 +229,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7582E53B1A630A9F00C37C0A /* Item.m in Sources */,
+				7582E53E1A630CE100C37C0A /* ItemManager.m in Sources */,
 				7582E51C1A6309D900C37C0A /* ViewController.m in Sources */,
 				7582E5191A6309D900C37C0A /* AppDelegate.m in Sources */,
 				7582E5161A6309D900C37C0A /* main.m in Sources */,

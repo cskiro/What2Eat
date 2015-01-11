@@ -7,8 +7,10 @@
 //
 
 #import "ViewController.h"
+#import "ItemManager.h"
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *foodLabel;
 
 @end
 
@@ -16,12 +18,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    self.foodLabel.text = @"";
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)buttonPressed:(id)sender {
+    NSString *randomFood = [[ItemManager sharedInstance] getRandomFood];
+    self.foodLabel.text = randomFood;
 }
 
 @end
