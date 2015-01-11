@@ -11,6 +11,10 @@
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *foodLabel;
+@property (weak, nonatomic) IBOutlet UIButton *letsEatButton;
+@property (weak, nonatomic) IBOutlet UIButton *findPlacesButton;
+@property (weak, nonatomic) IBOutlet UIButton *tryAgainButton;
+@property (strong, nonatomic) NSString *food;
 
 @end
 
@@ -19,11 +23,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.foodLabel.text = @"";
+    self.findPlacesButton.hidden = YES;
+    self.tryAgainButton.hidden = YES;
 }
 
 - (IBAction)buttonPressed:(id)sender {
     NSString *randomFood = [[ItemManager sharedInstance] getRandomFood];
+    self.food = randomFood;
     self.foodLabel.text = randomFood;
+    self.letsEatButton.hidden = YES;
+    self.findPlacesButton.hidden  = NO;
+    self.tryAgainButton.hidden = NO;
+}
+- (IBAction)tryAgainPressed:(id)sender {
+}
+- (IBAction)findPlacesPressed:(id)sender {
 }
 
 @end
