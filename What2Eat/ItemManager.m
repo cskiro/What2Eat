@@ -49,22 +49,15 @@
 -(void) buildModel {
     NSMutableArray *mutableFoods = [[NSMutableArray alloc] init];
     
-    Item *item0 = [[Item alloc] init];
-    [item0 setName:@"American"];
-    [mutableFoods addObject: item0];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"FoodChoices" ofType:@"plist"];
+    NSDictionary *dictionary = [[NSMutableDictionary alloc] initWithContentsOfFile:path];
+    NSMutableArray *foodNames = [dictionary objectForKey:@"foodChoices"];
     
-    Item *item1 = [[Item alloc] init];
-    [item1 setName:@"Italian"];
-    [mutableFoods addObject: item1];
-    
-    Item *item2 = [[Item alloc] init];
-    [item2 setName:@"Chinese"];
-    [mutableFoods addObject: item2];
-    
-    Item *item3 = [[Item alloc] init];
-    [item3 setName:@"Mexican"];
-    [mutableFoods addObject: item3];
-    
+    for(int i=0; i < foodNames.count; i++){
+        Item *item = [[Item alloc] init];
+        [item setName:foodNames[i]];
+        [mutableFoods addObject:item];
+    }
     
     self.foods = mutableFoods;
 }
