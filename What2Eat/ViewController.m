@@ -37,7 +37,10 @@
 }
 
 -(void)refreshView {
-    
+    self.foodLabel.text = @"";
+    self.findPlacesButton.hidden = YES;
+    self.tryAgainButton.hidden = YES;
+    self.letsEatButton.hidden = NO;
 }
 
 - (IBAction)buttonPressed:(id)sender {
