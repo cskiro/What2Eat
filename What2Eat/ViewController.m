@@ -36,6 +36,9 @@
     self.tryAgainButton.hidden = NO;
 }
 - (IBAction)tryAgainPressed:(id)sender {
+    NSString *randomFood = [[ItemManager sharedInstance] getRandomFood];
+    self.food = randomFood;
+    self.foodLabel.text = randomFood;
 }
 - (IBAction)findPlacesPressed:(id)sender {
 }
