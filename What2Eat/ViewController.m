@@ -10,11 +10,14 @@
 #import "ItemManager.h"
 
 @interface ViewController ()
+
 @property (weak, nonatomic) IBOutlet UILabel *foodLabel;
 @property (weak, nonatomic) IBOutlet UIButton *letsEatButton;
 @property (weak, nonatomic) IBOutlet UIButton *findPlacesButton;
 @property (weak, nonatomic) IBOutlet UIButton *tryAgainButton;
 @property (strong, nonatomic) NSString *food;
+
+-(void) refreshView;
 
 @end
 
@@ -22,9 +25,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.foodLabel.text = @"";
     self.findPlacesButton.hidden = YES;
     self.tryAgainButton.hidden = YES;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(refreshView)
+                                                 name:UIApplicationDidBecomeActiveNotification
+                                               object:nil];
+}
+
+-(void)refreshView {
+    
 }
 
 - (IBAction)buttonPressed:(id)sender {
@@ -35,11 +48,13 @@
     self.findPlacesButton.hidden  = NO;
     self.tryAgainButton.hidden = NO;
 }
+
 - (IBAction)tryAgainPressed:(id)sender {
     NSString *randomFood = [[ItemManager sharedInstance] getRandomFood];
     self.food = randomFood;
     self.foodLabel.text = randomFood;
 }
+
 - (IBAction)findPlacesPressed:(id)sender {
     NSString *url = [NSString stringWithFormat:@"http://www.yelp.com/search?find_desc=%@", self.food];
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString: url]];
